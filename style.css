@@ -70,10 +70,34 @@ h1 {
   margin: 0 auto;
 }
 
-#saveButton {
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+.search-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-group label {
+  margin-bottom: 5px;
+  color: var(--color-title);
+}
+
+.search-group input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--color-title);
+  border-radius: 5px;
+  color: var(--color-title);
+}
+
+#saveButton {
   padding: 10px;
   font-size: 1rem;
   background-color: var(--color-button-bg);
@@ -204,4 +228,11 @@ tbody tr:hover .delete-btn {
   margin-top: 10px;
   margin-bottom: 10px;
   display: none;
+}
+
+/* Additional CSS for the search bar */
+.highlight td {
+  color: #264653;
+  font-weight: 600;
+  background-color: #d6e5eb42;
 }
