@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectNameInput = document.getElementById("projectName");
   const projectTableBody = document.getElementById("projectTableBody");
   const errorMessage = document.getElementById("errorMessage");
+  const saveButton = document.getElementById("saveButton");
 
   projectForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -29,6 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  saveButton.addEventListener("click", () => {
+    saveProjectsToLocalStorage();
+  });
+
   function formatProjectName(name) {
     return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
   }
@@ -45,35 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = document.createElement("tr");
     const idCell = document.createElement("td");
     const nameCell = document.createElement("td");
-    const deleteBtn = document.createElement("button");
 
     idCell.textContent = id;
     nameCell.textContent = name;
-    deleteBtn.textContent = "×";
-    deleteBtn.classList.add("delete-btn");
-
-    deleteBtn.addEventListener("click", () => {
-      row.remove();
-      deleteProjectFromLocalStorage(id);
-    });
 
     row.appendChild(idCell);
     row.appendChild(nameCell);
-    row.appendChild(deleteBtn);
     projectTableBody.appendChild(row);
-
-    saveProjectToLocalStorage(id, name);
   }
 
-  function saveProjectToLocalStorage(id, name) {
-    const projects = JSON.parse(localStorage.getItem("projects")) || [];
-    projects.push({ id, name });
-    localStorage.setItem("projects", JSON.stringify(projects));
-  }
-
-  function deleteProjectFromLocalStorage(id) {
-    let projects = JSON.parse(localStorage.getItem("projects")) || [];
-    projects = projects.filter((project) => project.id !== id);
+  function saveProjectsToLocalStorage() {
+    const projects = [];
+    const rows = projectTableBody.querySelectorAll("tr");
+    rows.forEach(row => {
+      const id = row.children[0].textContent;
+      const name = row.children[1].textContent;
+      projects.push({ id, name });
+    });
     localStorage.setItem("projects", JSON.stringify(projects));
   }
 
