@@ -49,11 +49,12 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 20px 0;
   background-color: #fff;
+  position: relative;
 }
 
 .maintitle {
@@ -66,6 +67,25 @@ h1 {
   font-weight: 500;
   margin-bottom: 1%;
   background-color: #fff;
+  margin: 0 auto;
+}
+
+#saveButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: var(--color-button-bg);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#saveButton:hover {
+  background-color: var(--color-button-bg-hover);
 }
 
 main {
@@ -118,10 +138,6 @@ button {
 
 button:hover {
   background-color: var(--color-button-bg-hover);
-}
-
-#saveButton {
-  margin-right: 20px;
 }
 
 table {
