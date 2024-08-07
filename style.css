@@ -1,0 +1,187 @@
+/* Color Definitions */
+:root {
+  --color-bg-phase: #d6e5eb;
+  --color-bg-phase-active: #f4a261;
+  --color-bg-connector: #d6e5eb;
+  --color-bg-connector-active: #f4a261;
+  --color-bg-side-connector-left: #d6e5eb;
+  --color-bg-side-connector-left-active: #f4a261;
+  --color-bg-side-connector-right: #d6e5eb;
+  --color-bg-side-connector-right-active: #f4a261;
+  --color-text-description: #457b9d;
+  --color-text-description-active: #fff;
+  --color-reset-button-bg: #264653;
+  --color-reset-button-bg-hover: #1f3440;
+  --color-checklist-circle: #457b9d;
+  --color-checklist-circle-checked: #999;
+  --color-title: #264653;
+  --color-title-progress: #e76f51;
+  --color-title-left: #e76f51;
+  --color-title-right: #e76f51;
+  --color-flowchart-bg: #aac7d3;
+  --color-popup-bg: #fff;
+  --color-popup-border: #9dc3d2;
+  --color-popup-shadow: #26465367;
+  --color-button-bg: #264653;
+  --color-button-bg-hover: #1f3440;
+  --color-delete-btn: #aaa;
+  --color-delete-btn-hover: #777;
+  --color-hover: #aac7d3;
+  --color-error: #e76f51;
+}
+
+/* Reset margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+  user-select: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.maintitle {
+  color: var(--color-title);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 1%;
+  background-color: #fff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--color-title);
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--color-title);
+  border-radius: 5px;
+  color: var(--color-title);
+}
+
+button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: var(--color-button-bg);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--color-button-bg-hover);
+}
+
+table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--color-bg-phase);
+  color: var(--color-title);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: var(--color-hover);
+}
+
+tbody tr {
+  position: relative;
+}
+
+.delete-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 35%; /* Adjusted to align properly */
+  transform: translateY(-50%);
+  background-color: var(--color-delete-btn);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.delete-btn:hover {
+  background-color: var(--color-delete-btn-hover);
+}
+
+tbody tr:hover .delete-btn {
+  display: flex;
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: none;
+}
