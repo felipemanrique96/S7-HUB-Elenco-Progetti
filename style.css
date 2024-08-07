@@ -49,7 +49,7 @@ body {
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 20px 0;
@@ -121,7 +121,7 @@ button:hover {
 }
 
 #saveButton {
-  margin-top: 20px;
+  margin-right: 20px;
 }
 
 table {
