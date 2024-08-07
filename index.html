@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project List</title>
@@ -11,39 +11,45 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <div class="maintitle">
-        <h1>S7 HUB - Elenco Progetti</h1>
-      </div>
-      <button id="saveButton">Save Projects</button>
+        <div class="maintitle">
+            <h1>S7 HUB - Elenco Progetti</h1>
+        </div>
+        <div class="header-controls">
+            <div class="form-group search-group">
+                <label for="searchInput">Search Project:</label>
+                <input type="text" id="searchInput" autocomplete="off" placeholder="Search by ID or Name" />
+            </div>
+            <button id="saveButton">Save Projects</button>
+        </div>
     </header>
     <main>
-      <form id="projectForm">
-        <div class="form-group">
-          <label for="projectId">Project ID:</label>
-          <input type="text" id="projectId" autocomplete="off" required />
-        </div>
-        <div class="form-group">
-          <label for="projectName">Project Name:</label>
-          <input type="text" id="projectName" autocomplete="off" required />
-        </div>
-        <button type="submit">Add Project</button>
-      </form>
-      <div class="error-message" id="errorMessage"></div>
-      <table>
-        <thead>
-          <tr>
-            <th>Project ID</th>
-            <th>Project Name</th>
-          </tr>
-        </thead>
-        <tbody id="projectTableBody">
-          <!-- Rows will be added here dynamically -->
-        </tbody>
-      </table>
+        <form id="projectForm">
+            <div class="form-group">
+                <label for="projectId">Project ID:</label>
+                <input type="text" id="projectId" autocomplete="off" required />
+            </div>
+            <div class="form-group">
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" autocomplete="off" required />
+            </div>
+            <button type="submit">Add Project</button>
+        </form>
+        <div class="error-message" id="errorMessage"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project ID</th>
+                    <th>Project Name</th>
+                </tr>
+            </thead>
+            <tbody id="projectTableBody">
+                <!-- Rows will be added here dynamically -->
+            </tbody>
+        </table>
     </main>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
