@@ -50,12 +50,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = document.createElement("tr");
     const idCell = document.createElement("td");
     const nameCell = document.createElement("td");
+    const deleteBtn = document.createElement("button");
 
     idCell.textContent = id;
     nameCell.textContent = name;
+    deleteBtn.textContent = "×";
+    deleteBtn.classList.add("delete-btn");
+
+    deleteBtn.addEventListener("click", () => {
+      row.remove();
+      deleteProjectFromLocalStorage(id);
+    });
 
     row.appendChild(idCell);
     row.appendChild(nameCell);
+    row.appendChild(deleteBtn);
     projectTableBody.appendChild(row);
   }
 
@@ -67,6 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = row.children[1].textContent;
       projects.push({ id, name });
     });
+    localStorage.setItem("projects", JSON.stringify(projects));
+  }
+
+  function deleteProjectFromLocalStorage(id) {
+    let projects = JSON.parse(localStorage.getItem("projects")) || [];
+    projects = projects.filter((project) => project.id !== id);
     localStorage.setItem("projects", JSON.stringify(projects));
   }
 
